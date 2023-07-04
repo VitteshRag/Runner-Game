@@ -1,0 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Collision : MonoBehaviour
+{
+        // Start is called before the first frame update
+        public GameObject thePlayer;
+    void OnTriggerEnter(Collider other)
+    {
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        thePlayer.GetComponent<PlayerMovement>().enabled = false;     
+    }
+
+}
