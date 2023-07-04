@@ -7803,7 +7803,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741012335}
-  - component: {fileID: 741012337}
   - component: {fileID: 741012336}
   m_Layer: 0
   m_Name: Player
@@ -7841,20 +7840,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &741012337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741012334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c3bc55781b03264bab77547a67ac039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  lrspeed: 10
 --- !u!1001 &743186962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11517,6 +11502,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4124369588495422, guid: a76742b3f592d834ca1e03ad08301998, type: 3}
   m_PrefabInstance: {fileID: 1128560520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1140068701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5352958571798197664, guid: c564c8c0d0cdc45429417f315e9f3e41, type: 3}
+  m_PrefabInstance: {fileID: 1518640071}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1144588980
 GameObject:
@@ -15777,6 +15767,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4684403152539725594, guid: c564c8c0d0cdc45429417f315e9f3e41, type: 3}
   m_PrefabInstance: {fileID: 1518640071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1608126062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140068701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3bc55781b03264bab77547a67ac039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  lrspeed: 10
 --- !u!1001 &1629519926
 PrefabInstance:
   m_ObjectHideFlags: 0
