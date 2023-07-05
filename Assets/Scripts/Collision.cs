@@ -8,8 +8,7 @@ public class Collision : MonoBehaviour
         public GameObject thePlayer;
     void OnTriggerEnter(Collider other)
     {
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        thePlayer.GetComponent<PlayerMovement>().enabled = false;     
+        if()
     }
 
 }
