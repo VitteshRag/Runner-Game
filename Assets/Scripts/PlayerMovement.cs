@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] public float speed;
     [SerializeField] public float lrspeed;
+    [SerializeField] public float jumph;
+    public float AirTime;
+     bool isJumping = false;
+     bool comingDown = false;
     public GameObject charModel;
     void Start()
     {
@@ -43,7 +47,28 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            charModel.GetComponent<Animator>().Play("Jump");
+            if(isJumping==false)
+            {
+                isJumping = true;
+                charModel.GetComponent<Animator>().Play("Jump");
+                StartCoroutine(JumpSeq());
+            }
         }
+        if(isJumping==true)
+        {
+            if(comingDown==false)
+            transform.Translate(Vector3.up * Time.deltaTime * jumph, Space.World);
+            else
+                transform.Translate(Vector3.up * Time.deltaTime * -1*jumph, Space.World);
+
+        }
+    }
+    IEnumerator JumpSeq()
+    {
+        yield return new WaitForSeconds(AirTime);
+        comingDown = true;
+        yield return new WaitForSeconds(AirTime);
+        comingDown = false;
+        isJumping = false;
     }
 }
