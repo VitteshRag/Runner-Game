@@ -7,10 +7,10 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] public float speed;
     [SerializeField] public float lrspeed;
-    Animator animator;
+    public GameObject charModel;
     void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,32 +22,28 @@ public class PlayerMovement : MonoBehaviour
             if (this.gameObject.transform.position.x > BoundryCheck.leftside)
             {
                 transform.Translate(Vector3.left * Time.deltaTime * lrspeed, Space.World);
-                animator.SetBool("Left", true);
+                //animator.SetBool("Left", true);
             }
         }
         else
         {
-            animator.SetBool("Left", false);
+            //animator.SetBool("Left", false);
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             if (this.gameObject.transform.position.x < BoundryCheck.rightside)
             {
                 transform.Translate(Vector3.right * Time.deltaTime * lrspeed, Space.World);
-                animator.SetBool("Right", true);
+                //animator.SetBool("Right", true);
             }
         }
         else
         {
-            animator.SetBool("Right", false);
+            //animator.SetBool("Right", false);
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            animator.SetBool("Jumping", true);
-        }
-        else
-        {
-            animator.SetBool("Jumping", false);
+            charModel.GetComponent<Animator>().Play("Jump");
         }
     }
 }
