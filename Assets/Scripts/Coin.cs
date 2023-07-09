@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float rotateSpeed=0.5f;
+    private float rotateSpeed=1.0f;
     public AudioSource coinFX;
     void Update()
     {
