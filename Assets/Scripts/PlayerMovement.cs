@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.World);
+        StartCoroutine(IncreaseSpeed());
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             if (this.gameObject.transform.position.x > BoundryCheck.leftside)
@@ -70,5 +71,11 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(AirTime);
         comingDown = false;
         isJumping = false;
+    }
+    
+    IEnumerator IncreaseSpeed()
+    {
+        yield return new WaitForSeconds(3);
+        speed+=0.005f;
     }
 }
