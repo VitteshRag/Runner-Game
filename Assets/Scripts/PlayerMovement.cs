@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public float speed;
     [SerializeField] public float lrspeed;
     [SerializeField] public float jumph;
+    public GameObject IncreaseSpeedInfo;
+
     public float AirTime;
      bool isJumping = false;
      bool comingDown = false;
@@ -75,7 +78,8 @@ public class PlayerMovement : MonoBehaviour
     
     IEnumerator IncreaseSpeed()
     {
-        yield return new WaitForSeconds(3);
-        speed+=0.005f;
+        yield return new WaitForSeconds(10);
+        IncreaseSpeedInfo.SetActive(true);
+        speed+=0.001f;
     }
 }
