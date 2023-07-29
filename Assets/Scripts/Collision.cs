@@ -13,6 +13,7 @@ public class Collision : MonoBehaviour
     public GameObject LevelControl;
     void OnTriggerEnter(Collider other)
     {
+        thePlayer.transform.Translate(Vector3.down*Time.deltaTime, Space.World);
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         thePlayer.GetComponent<PlayerMovement>().enabled = false;
         LevelControl.GetComponent<Distance>().enabled=false;

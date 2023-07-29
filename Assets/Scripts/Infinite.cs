@@ -21,7 +21,7 @@ public class Infinite : MonoBehaviour
 
     IEnumerator GenerateSec()
     {
-        secNum = Random.Range(0, 3);
+        secNum = Random.Range(0, section.Length);
         Instantiate(section[secNum], new Vector3(0, 0, zPos), Quaternion.identity);
         zPos += 30;
         yield return new WaitForSeconds(2);
