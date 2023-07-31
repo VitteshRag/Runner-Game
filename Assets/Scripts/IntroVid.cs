@@ -11,11 +11,14 @@ public class IntroVid : MonoBehaviour
     void Update()
     {
         StartCoroutine(VideoDone());
+        if(Input.GetKey(KeyCode.Space))        
+        SceneManager.LoadScene(1);
+
     }
 
     IEnumerator VideoDone()
     {
-        yield return new WaitForSeconds(25);
+        yield return new WaitForSeconds(23);
         SceneManager.LoadScene(1);
     }
 }

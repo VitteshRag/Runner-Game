@@ -24,7 +24,7 @@ public class Infinite : MonoBehaviour
         secNum = Random.Range(0, section.Length);
         Instantiate(section[secNum], new Vector3(0, 0, zPos), Quaternion.identity);
         zPos += 30;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         createSec = false;
     }
 }

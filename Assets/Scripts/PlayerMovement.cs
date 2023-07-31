@@ -80,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         IncreaseSpeedInfo.SetActive(true);
-        speed+=0.001f;
+        speed+=0.0005f;        
+        yield return new WaitForSeconds(3);
+        IncreaseSpeedInfo.SetActive(false);
     }
 }
